@@ -24,7 +24,11 @@
             error.statusCode = 400;
         }
 
-        res.statusCode = (error.statusCode || 500).json ({success: false, error: error.message || 'server error' })
+        res.statusCode = (error.statusCode || 500).json({ 
+            success: false, 
+            error: error.message || 'server error' 
+          });
+          
     } catch (error) {
         next(error);
     }
